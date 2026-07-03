@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ex01.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 15:41:37 by benji             #+#    #+#             */
-/*   Updated: 2026/07/02 16:44:56 by benji            ###   ########.fr       */
+/*   Updated: 2026/07/03 15:52:49 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 
 #include <string>
 #include <iostream>
+
+std::string	get_info(std::string to_ask);
 
 #endif
