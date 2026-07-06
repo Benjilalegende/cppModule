@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 16:59:22 by benji             #+#    #+#             */
-/*   Updated: 2026/07/02 17:31:12 by benji            ###   ########.fr       */
+/*   Updated: 2026/07/06 14:37:30 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ Ampli::Ampli(std::string str)
 	int i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			std::cout << char(str[i] - 32);
-		else
-			std::cout << str[i];
+		str[i] = std::toupper(str[i]);
+		std::cout << str[i];
 		i++;
 	}
 	

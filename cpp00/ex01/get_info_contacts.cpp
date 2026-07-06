@@ -6,11 +6,13 @@
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 14:55:35 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/03 18:49:53 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/06 15:36:52 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ex01.hpp"
+#include "main.hpp"
+
+// retourne 1 s il n y a que des char qui sont des chiffres
 
 int	check_all_int(std::string str)
 {
@@ -29,18 +31,33 @@ int	check_all_int(std::string str)
 	return (1);
 }
 
-std::string	get_info(std::string to_ask)
+// recupere toutes les infos et si elles sont correct par rapport aux specificite les gardes sinon mets la str a ""
+
+void	get_info(std::string to_ask, std::string *to_put)
 {
 	std::string input;
-	while (1)
+	
+	if (std::cout << to_ask << ": " && std::cin >> input)
 	{
-		std::cout << to_ask << ": ";
-		std::getline(std::cin, input);
 		if (to_ask == "ENTER PHONENUMBER " && check_all_int(input) == 1)
-			return (input);
+			return (*to_put = input, (void)NULL);
 		else if (input != "" && to_ask != "ENTER PHONENUMBER ")
-			return (input);
-		std::cout << std::endl << "INCORECT" << std::endl;
+			return (*to_put = input, (void)NULL);
 	}
-	return (NULL);
+	*to_put = "";
+	return ;
+}
+
+//Si toutes les infos sont bonnes retourne 1 sinon 0
+
+int	info_are_good(std::string content_keeper[4])
+{
+	int i = 0;
+	while (i < 5)
+	{
+		if (content_keeper[i] == "")
+			return (0);
+		i++;
+	}
+	return (1);
 }

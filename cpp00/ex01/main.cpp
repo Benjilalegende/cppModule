@@ -6,77 +6,54 @@
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 15:40:05 by benji             #+#    #+#             */
-/*   Updated: 2026/07/03 19:19:10 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/06 16:16:38 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ex01.hpp"
+#include "main.hpp"
 
-class Contact
-{
-	public:
-	Contact();
-	Contact(std::string first_name, std::string last_name, std::string nickname,
-			std::string phone_number, std::string darkest_secret);
-	
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number; 
-	std::string darkest_secret;
-	int			set;
-};
+//initialise a 0 chacune des variables de contacts et met set a 0 pour siginifier qu il n est pas enregistre
 
-class PhoneBook
-{
-	public:	
-	PhoneBook();
-	PhoneBook(std::string info);
 
-	Contact stock[7];
-};
 
-Contact::Contact()
-{
-	first_name = "NONE1";
-	last_name = "NONE2";
-	nickname = "NONE3";
-	phone_number = "NONE4";
-	darkest_secret = "NONE5";
-	set = 0;
-}
+// Cree chacune des case contact du phone
 
-PhoneBook::PhoneBook()
-{
-	int i = 0;
 
-	while (i < 8)
-	{
-		Contact stock[i];
-		i++;
-	}
-	return ;
-}
+
+//Attribue dans une variable temporraire l entree utilisateur pour chaque field, si tout les fields sont corrects l enregistre dans le telephone
 
 void add_contact(PhoneBook *phone)
 {
 	static int i = 0;
 	std::string input;
+	std::string content_keeper[4];
 	
 	if (i == 8)
 		i = 0;
-	phone->stock[i].first_name = get_info("ENTER FIRSTNAME ");
-	phone->stock[i].last_name = get_info("ENTER LASTNAME ");
-	phone->stock[i].nickname = get_info("ENTER NICKNAME ");
-	phone->stock[i].phone_number = get_info("ENTER PHONENUMBER ");
+	get_info("ENTER FIRSTNAME ", &content_keeper[0]);		
+	get_info("ENTER LASTNAME ", &content_keeper[1]);
+	get_info("ENTER NICKNAME ", &content_keeper[2]);
+	get_info("ENTER PHONENUMBER ", &content_keeper[3]);
+	get_info("ENTER DARKEST SECRET ", &content_keeper[4]);
+	if (info_are_good(content_keeper))
+	{
+		std::cout << "INFORMATION ENREGISTREES" << std::endl;
+		phone->PhoneBook_setter(i, content_keeper);
+		i++;
+		return ; 
+	}
+	std::cout << "INFORMATION INCORECTES --> NON ENREGISTREES~" << std::endl;
 }
+
+//initialise phone puis sert a rediriger le programme en fonction de l input utilisateur
 
 int main(void)
 {
 	PhoneBook phone;
 	std::string input;
 	
-	while (std::getline(std::cin, input))
+	// while (std::getline(std::cin, input))
+	while (std::cin >> input)
 	{
 		if (input == "EXIT")
 			return (0);
@@ -85,6 +62,6 @@ int main(void)
 		if (input == "SEARCH")
 		break;
 	}
-	std::cout << phone.stock[0].phone_number << std::endl;
+	// std::cout << phone.sock[1].phone_number << std::endl;
 	return (1);
 }

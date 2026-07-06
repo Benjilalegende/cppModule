@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.hpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 15:41:37 by benji             #+#    #+#             */
-/*   Updated: 2026/07/03 15:52:49 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/06 15:58:16 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX01_HPP
-# define EX01_HPP
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
 #include <string>
 #include <iostream>
+#include <unistd.h>
+#include "phonebook.hpp"
 
-std::string	get_info(std::string to_ask);
+// CONSTRUCTORS
+
+void	get_info(std::string to_ask, std::string *to_put);
+int	info_are_good(std::string content_keeper[4]);
 
 #endif
