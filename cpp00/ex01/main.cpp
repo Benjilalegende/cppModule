@@ -6,7 +6,7 @@
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 15:40:05 by benji             #+#    #+#             */
-/*   Updated: 2026/07/06 16:16:38 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/08 12:02:21 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int main(void)
 	PhoneBook phone;
 	std::string input;
 	
-	// while (std::getline(std::cin, input))
 	while (std::cin >> input)
 	{
 		if (input == "EXIT")
@@ -60,8 +59,7 @@ int main(void)
 		if (input == "ADD")
 			add_contact(&phone);
 		if (input == "SEARCH")
-		break;
+			search_contact(&phone);
 	}
-	// std::cout << phone.sock[1].phone_number << std::endl;
 	return (1);
 }
