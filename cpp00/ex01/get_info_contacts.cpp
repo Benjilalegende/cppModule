@@ -6,7 +6,7 @@
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 14:55:35 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/06 15:36:52 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/09 16:20:09 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ int	check_all_int(std::string str)
 		if (str[i] >= '0' && str[i] <= '9')
 			i++;
 		else
-		{
-			// std::cout << "TEST";
 			return (0);
-		}
 	}
 	return (1);
 }
