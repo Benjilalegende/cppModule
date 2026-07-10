@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 13:34:51 by benji             #+#    #+#             */
-/*   Updated: 2026/07/10 14:35:35 by benji            ###   ########.fr       */
+/*   Updated: 2026/07/10 18:46:58 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ class Zombie
 {
 	public:
 		Zombie();
+		void Zombie_destroyer(Zombie *Zombie);
 		Zombie *newZombie(std::string name);
 		void	randomChump( std::string name);
 		void announce(void);

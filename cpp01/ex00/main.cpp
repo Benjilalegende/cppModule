@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 13:31:54 by benji             #+#    #+#             */
-/*   Updated: 2026/07/10 14:24:19 by benji            ###   ########.fr       */
+/*   Updated: 2026/07/10 18:47:55 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	main(void)
 {
 	Zombie *zombie;
-	
+
 	zombie = zombie->newZombie("test");
 	zombie->announce();
-	delete zombie;
+	zombie->Zombie_destroyer(zombie);
 	std::cout << std::endl;
 	zombie->randomChump("TEST2");
 	return (0);
