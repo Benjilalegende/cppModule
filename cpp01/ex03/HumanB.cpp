@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombiHorde.cpp                                     :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 18:48:50 by benji             #+#    #+#             */
-/*   Updated: 2026/07/11 13:16:14 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/11 14:45:06 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/11 15:58:21 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "HumanB.hpp"
 
-Zombie *zombiHorde(int N, std::string name)
+HumanB::HumanB(std::string name_entry)
 {
-	Zombie *zombie;
+	name = name_entry;
+}
 
-	zombie = new Zombie[N];
-	if (!zombie)
-		return (NULL);
-	int i = 0;
-	while (i < N)
-	{
-		zombie[i].putname(name);
-		i++;
-	}
-	i = 0;
-	// while (i < N)
-	// {
-	// 	zombie[i].announce();
-	// 	i++;
-	// }
-	return (zombie);
+void	HumanB::attack()
+{
+	std::cout << name <<  " attacks with their " << weapon->getType()
+	<< std::endl;
+	return ;
+}
+
+void	HumanB::setWeapon(Weapon& Weapon_entry)
+{
+	weapon = &Weapon_entry;
 }

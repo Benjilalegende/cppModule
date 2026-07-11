@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombiHorde.cpp                                     :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 18:48:50 by benji             #+#    #+#             */
-/*   Updated: 2026/07/11 13:16:14 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/11 14:20:11 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/11 15:56:42 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-Zombie *zombiHorde(int N, std::string name)
+#include "HumanA.h"
+
+class	HumanA
 {
-	Zombie *zombie;
+	public:
+	HumanA();
+	HumanA(std::string name_entry, Weapon& weapon_entry);
+	void	attack();
 
-	zombie = new Zombie[N];
-	if (!zombie)
-		return (NULL);
-	int i = 0;
-	while (i < N)
-	{
-		zombie[i].putname(name);
-		i++;
-	}
-	i = 0;
-	// while (i < N)
-	// {
-	// 	zombie[i].announce();
-	// 	i++;
-	// }
-	return (zombie);
-}
+	private:
+	std::string name;
+	Weapon	*weapon;
+};
+
+
+
+
+#endif

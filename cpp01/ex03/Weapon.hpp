@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombiHorde.cpp                                     :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 18:48:50 by benji             #+#    #+#             */
-/*   Updated: 2026/07/11 13:16:14 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/11 13:53:00 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/11 16:13:32 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Zombie *zombiHorde(int N, std::string name)
+#include "Weapon.h"
+
+class	Weapon
 {
-	Zombie *zombie;
+	public:
+	Weapon();
+	Weapon(std::string type_name);
+	std::string&	getType();
+	void			setType(std::string type_to_put);
 
-	zombie = new Zombie[N];
-	if (!zombie)
-		return (NULL);
-	int i = 0;
-	while (i < N)
-	{
-		zombie[i].putname(name);
-		i++;
-	}
-	i = 0;
-	// while (i < N)
-	// {
-	// 	zombie[i].announce();
-	// 	i++;
-	// }
-	return (zombie);
-}
+	private:
+	std::string type;
+};
+
+#endif

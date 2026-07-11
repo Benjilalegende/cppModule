@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 18:48:40 by benji             #+#    #+#             */
-/*   Updated: 2026/07/10 18:56:04 by benji            ###   ########.fr       */
+/*   Updated: 2026/07/11 13:53:54 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,14 @@ void	Zombie::announce()
 {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;
+}
+
+Zombie::Zombie()
+{
+	return ;
+}
+
+void	Zombie::putname(std::string name_to_put)
+{
+	name = name_to_put;
 }

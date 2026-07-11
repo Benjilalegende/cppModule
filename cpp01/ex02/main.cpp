@@ -5,24 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 18:49:42 by benji             #+#    #+#             */
-/*   Updated: 2026/07/11 13:16:41 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/11 13:20:01 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/11 13:36:53 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <unistd.h>
 
 int	main(void)
 {
-	Zombie *zombie;
-	int i = 0;
+	std::string	str = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &str;
+	std::string	&stringREF = str;
 
-	zombie = zombiHorde(4, "test");
-	while (i < 4)
-	{
-		zombie[i].announce();
-		i++;
-	}
-	delete []zombie;
-	return (0);
+	std::cout << std::__addressof(str) << std::endl;
+	std::cout << std::__addressof(*stringPTR) << std::endl;
+	std::cout << std::__addressof(stringREF) << std::endl;
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+	return (1);
 }
