@@ -5,22 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 14:52:41 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/19 17:05:19 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/20 19:56:19 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScravTrap.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+int main(void)
+{
+	ClapTrap test("AHHH");
+	ClapTrap test2(test);
+	ScavTrap grosprout("tresgrosprout");
+	ScavTrap std(grosprout);
+
+	test.attack("Prout");
+	test.takeDamage(5);
+	test.takeDamage(2500000000);
+	test.beRepaired(5);
+	test2.attack("Prout2");
+	grosprout.attack("CACA");
+	std.takeDamage(5);
+	std = grosprout;
 }
