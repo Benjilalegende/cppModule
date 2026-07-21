@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/21 16:36:23 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 17:06:47 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main(void)
+#include "Animal.h"
+
+class Animal
 {
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+	public :
+	Animal();
+	Animal(Animal& other);
+	Animal &operator=(Animal& to_copy);
+	virtual ~Animal();
+	virtual void makeSound() const;
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
-}
+	protected:
+	std::string type;
+
+};
+
+
+
+#endif

@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongWrongAnimal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/21 17:48:26 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 17:48:32 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#ifndef WrongAnimal_H
+# define WrongAnimal_H
 
-int main(void)
-{
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+#include <string>
+#include <iomanip>
+#include <iostream>
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
-}
+
+#endif

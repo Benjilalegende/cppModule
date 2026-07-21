@@ -5,27 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/21 17:17:41 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 18:04:52 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-int main(void)
+int main()
 {
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const WrongAnimal* i = new WrongCat();
+	// std::cout << j->getType() << " " << std::endl;
+	// std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
+	delete i;
+	delete j;
+	delete meta;
+	return 0;
 }

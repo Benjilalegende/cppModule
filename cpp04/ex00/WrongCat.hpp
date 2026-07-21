@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/21 17:51:47 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 17:52:20 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
 
-int main(void)
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+
+#include "WrongCat.h"
+
+class WrongCat : public WrongAnimal
 {
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+	public :
+	WrongCat();
+	WrongCat(WrongCat& other);
+	WrongCat& operator=(WrongCat& to_copy);
+	~WrongCat();
+	void makeSound(void) const;
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
-}
+
+};
+
+#endif

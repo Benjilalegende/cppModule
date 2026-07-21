@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/21 16:59:55 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 17:22:42 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#ifndef Dog_HPP
+# define Dog_HPP
 
-int main(void)
+#include "Dog.h"
+
+class Dog : public Animal
 {
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+	public :
+	Dog();
+	Dog(Dog& other);
+	Dog& operator=(Dog& to_copy);
+	~Dog();
+	void makeSound(void) const;
+	std::string getType();
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
-}
+
+};
+
+#endif

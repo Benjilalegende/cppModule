@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 17:54:23 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/21 13:52:36 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/20 16:25:29 by bribot            #+#    #+#             */
+/*   Updated: 2026/07/21 14:23:41 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#ifndef SCRAVTRAP_HPP
+# define SCRAVTRAP_HPP
 
-int main(void)
+#include "ScavTrap.h"
+
+class	ScavTrap : public ClapTrap
 {
-	ClapTrap test("AHHH");
-	ClapTrap test2(test);
-	ScavTrap grosprout("tresgrosprout");
-	ScavTrap std(grosprout);
+	public :
+	ScavTrap(std::string Name); //Default Constructor
+	ScavTrap(ScavTrap& other); //copy Constructor
+	ScavTrap &operator=(ScavTrap& to_copy); //operator
+	~ScavTrap(); //Destroyer
 
-	test.attack("Prout");
-	test.takeDamage(5);
-	test.takeDamage(2500000000);
-	test.beRepaired(5);
-	test2.attack("Prout2");
-	grosprout.attack("CACA");
-	std.takeDamage(5);
-	std = grosprout;
-}
+	void	attack(const std::string& target);
+	void	guardGate();
+	private:
+	int guardstate = 0;
+};
+
+#endif

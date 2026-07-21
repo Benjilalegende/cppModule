@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:31:13 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/20 19:58:31 by bribot           ###   ########.fr       */
+/*   Updated: 2026/07/21 14:23:56 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
@@ -29,11 +29,22 @@ ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other.Name)
 	guardstate = other.guardstate;
 }
 
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap destroyer called" << std::endl;
+	return ;
+}
+
 ScavTrap &ScavTrap::operator=(ScavTrap& to_copy)
 {
+	std::cout << "ScavTrap operator= called" << std::endl;
 	if (this != &to_copy)
 	{
-
+		this->Attack_Damage = to_copy.Attack_Damage;
+		this->Energy_Point = to_copy.Energy_Point;
+		this->Hit_Point = to_copy.Hit_Point;
+		this->Name = to_copy.Name;
+		this->guardstate = to_copy.guardstate;
 	}
 	return (*this);
 }
