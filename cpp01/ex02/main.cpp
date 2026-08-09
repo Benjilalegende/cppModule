@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 13:20:01 by bribot            #+#    #+#             */
-/*   Updated: 2026/07/11 13:36:53 by bribot           ###   ########.fr       */
+/*   Updated: 2026/08/08 09:09:17 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(void)
 {
-	std::string	str = "HI THIS IS BRAIN";
+	std::string	str = "HI THIS IS Brain";
 	std::string	*stringPTR = &str;
 	std::string	&stringREF = str;
 
