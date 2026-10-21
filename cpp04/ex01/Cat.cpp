@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 16:53:50 by bribot            #+#    #+#             */
-/*   Updated: 2026/08/08 12:45:35 by benji            ###   ########.fr       */
+/*   Updated: 2026/10/21 16:10:43 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cat &Cat::operator=(Cat& to_copy)
 	if (this != &to_copy)
 	{
 		this->type = to_copy.type;
+		*this->brain = *to_copy.brain;
 	}
 	return (*this);
 }

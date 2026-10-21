@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 17:00:44 by bribot            #+#    #+#             */
-/*   Updated: 2026/08/08 09:39:03 by benji            ###   ########.fr       */
+/*   Updated: 2026/10/21 16:08:13 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog &Dog::operator=(Dog& to_copy)
 	if (this != &to_copy)
 	{
 		this->type = to_copy.type;
+		*this->brain = *to_copy.brain;
 	}
 	return (*this);
 }

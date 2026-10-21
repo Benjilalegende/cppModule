@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 17:17:41 by bribot            #+#    #+#             */
-/*   Updated: 2026/08/08 12:45:56 by benji            ###   ########.fr       */
+/*   Updated: 2026/10/21 15:54:55 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,23 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
+int	main()
 {
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	Cat i;
+	const Animal *animals[3];
+	animals[0] = new Animal();
+	animals[1] = new Dog();
+	animals[2] = new Cat();
 
-	i.put_in_brain("PROUT", 20);
-		Cat j(i);
+	std::cout << "\nSons avec liaison dynamique :" << std::endl;
+	for (int i = 0; i < 3; ++i)
+		animals[i]->makeSound();
 
-	std::cout << "REPONSE " << j.get_from_brain(20) << std::endl;
-	// //PARTIE DU TAB
-	// const Animal* tab[100];
-	// for (int k = 0; k < 50; k++)
-	// 	tab[k] = new Cat();
-	// for (int k = 50; k < 100; k++)
-	// 	tab[k] = new Dog();
-	// for (int k = 0; k < 100; k++)
-	// 	delete tab[k];
-	// delete i;
-	// delete j;
-	// delete meta;
-	return 0;
+	std::cout << "\nSon via WrongAnimal* (liaison non dynamique) :" << std::endl;
+	const WrongAnimal *wrongCat = new WrongCat();
+	wrongCat->makeSound();
+
+	for (int i = 0; i < 3; ++i)
+		delete animals[i];
+	delete wrongCat;
+	return (0);
 }
