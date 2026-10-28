@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 15:27:40 by benji             #+#    #+#             */
-/*   Updated: 2026/10/25 15:52:47 by benji            ###   ########.fr       */
+/*   Updated: 2026/10/28 15:35:24 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 Bureaucrat::Bureaucrat(int grade_to_put, std::string name_to_put) : Name(name_to_put)
 {
+	if (grade_to_put <= 0)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade_to_put >= 151)
+		throw Bureaucrat::GradeTooLowException();
 	Grade = grade_to_put;
 }
 
@@ -44,4 +48,24 @@ int	Bureaucrat::GetGrade()
 std::string Bureaucrat::GetName()
 {
 	return (this->Name);
+}
+
+void	Bureaucrat::increment()
+{
+	if (this->Grade - 1 <= 0)
+		throw Bureaucrat::GradeTooHighException();
+	this->Grade++;
+}
+
+void	Bureaucrat::decrement()
+{
+	if (this->Grade + 1 >= 151)
+		throw Bureaucrat::GradeTooLowException();
+	this->Grade--;
+}
+
+std::ostream &operator<<(std::ostream &o, Bureaucrat& to_put)
+{
+	o << to_put.GetName() << ", bureaucrat grade " << to_put.GetGrade();
+	return (o);
 }

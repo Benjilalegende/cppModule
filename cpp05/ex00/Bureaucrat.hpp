@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 14:16:36 by benji             #+#    #+#             */
-/*   Updated: 2026/10/25 15:29:25 by benji            ###   ########.fr       */
+/*   Updated: 2026/10/28 15:30:11 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <typeinfo>
 
 class Bureaucrat
 {
@@ -25,6 +26,8 @@ class Bureaucrat
 	Bureaucrat(Bureaucrat& to_copy);
 	int	GetGrade();
 	std::string GetName();
+	void increment();
+	void decrement();
 
 	class GradeTooHighException : public std::exception
 	{
@@ -43,5 +46,6 @@ class Bureaucrat
 	const std::string Name;
 };
 
+std::ostream &operator<<(std::ostream &o, Bureaucrat& to_put);
 
 #endif
