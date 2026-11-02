@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 15:35:38 by benji             #+#    #+#             */
-/*   Updated: 2026/10/28 17:59:16 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/02 16:08:54 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,29 @@ int	main(void)
 
 	std::cout << "--------FORM TEST----------" << std::endl;
 
-	Form
+	Form to_test("test_to_high", 5, 7);
+	Bureaucrat beetween(6, "beetween");
 
+
+	try
+	{
+		beetween.signForm(to_test);
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << "grade_to_low" << std::endl;
+	}
+	beetween.increment();
+	beetween.increment();
+	try
+	{
+		beetween.signForm(to_test);
+	}
+	catch (Form::GradeTooLowException & e)
+	{
+		std::cout << "grade_to_low second" << std::endl;
+		return (0);
+	}
+	std::cout << to_test << std::endl;
 	return (0);
 }

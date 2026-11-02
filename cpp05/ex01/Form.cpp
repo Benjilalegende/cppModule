@@ -6,15 +6,19 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:36:42 by benji             #+#    #+#             */
-/*   Updated: 2026/10/28 17:44:38 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/02 15:57:03 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "Form.h"
+#include "Bureaucrat.hpp"
 
-Form::Form(std::string Name, int grade_sign, int grade_exec) : _Name(Name), _grade_exec(grade_exec), _grade_sign(grade_sign)
+Form::Form(std::string Name, int grade_sign, int grade_exec) : _Name(Name), _is_signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
-	_is_signed = 0;
+	if (grade_sign <= 0 || grade_exec <= 0)
+		throw Form::GradeTooHighException();
+	if (grade_sign > 150 || grade_exec > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form()
@@ -22,14 +26,16 @@ Form::~Form()
 
 }
 
-Form::Form(Form& to_copy) : _Name(to_copy._Name), _grade_exec(to_copy._grade_exec), _grade_sign(to_copy._grade_sign)
+Form::Form(Form& to_copy) : _Name(to_copy._Name), _is_signed(to_copy._is_signed), _grade_sign(to_copy._grade_sign), _grade_exec(to_copy._grade_exec)
 {
-	this->_is_signed = to_copy._is_signed;
 }
 
 Form& Form::operator=(Form& to_assign)
 {
+	if (this == &to_assign)
+		return *this;
 	this->_is_signed = to_assign._is_signed;
+	return *this;
 }
 
 //GETERS
@@ -72,5 +78,5 @@ void	Form::beSigned(Bureaucrat& who)
 	{
 		throw Form::GradeTooLowException();
 	}
-	this->_is_signed = 1;
+	this->_is_signed = true;
 }

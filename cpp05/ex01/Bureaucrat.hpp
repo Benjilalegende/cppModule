@@ -6,16 +6,17 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 14:16:36 by benji             #+#    #+#             */
-/*   Updated: 2026/10/28 17:47:50 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/02 15:55:46 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <string>
 #include <iostream>
-#include <typeinfo>
+#include <string>
+#include <exception>
+
 #include "Form.hpp"
 
 class Bureaucrat
@@ -33,13 +34,19 @@ class Bureaucrat
 	class GradeTooHighException : public std::exception
 	{
 		public :
-
+		virtual const char* what() const throw()
+		{
+			return "Grade too high";
+		}
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public :
-
+		virtual const char* what() const throw()
+		{
+			return "Grade too low";
+		}
 	};
 
 	private :
