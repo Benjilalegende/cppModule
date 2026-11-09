@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:03:55 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 18:22:56 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 18:24:53 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
 {
 	_target = target;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm()
+{
+
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

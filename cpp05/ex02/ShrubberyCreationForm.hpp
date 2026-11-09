@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:05:46 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 17:22:33 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 18:24:26 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ShrubberyCreationForm : public AForm {
 	public :
+	ShrubberyCreationForm();
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(ShrubberyCreationForm& to_copy);
 	ShrubberyCreationForm& operator=(ShrubberyCreationForm& to_assign);

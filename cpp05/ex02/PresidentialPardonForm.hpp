@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:04:02 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 17:40:20 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 18:23:21 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class PresidentialPardonForm : public AForm {
 	public :
+	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(PresidentialPardonForm& to_copy);
 	PresidentialPardonForm& operator=(PresidentialPardonForm& to_assign);

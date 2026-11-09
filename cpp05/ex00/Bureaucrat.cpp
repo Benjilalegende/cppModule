@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 15:27:40 by benji             #+#    #+#             */
-/*   Updated: 2026/10/28 15:35:24 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 15:56:29 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ Bureaucrat::Bureaucrat(int grade_to_put, std::string name_to_put) : Name(name_to
 }
 
 Bureaucrat::~Bureaucrat()
+{
+
+}
+
+Bureaucrat::Bureaucrat()
 {
 
 }

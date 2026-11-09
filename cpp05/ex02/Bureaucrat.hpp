@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 14:16:36 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 18:19:17 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/05 20:06:51 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ class Bureaucrat
 {
 	public :
 	Bureaucrat(int grade_to_put, std::string name_to_put);
+	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat& operator=(Bureaucrat& to_copy);
 	Bureaucrat(Bureaucrat& to_copy);
 	int	GetGrade() const;
-	std::string GetName();
+	std::string GetName() const;
 	void increment();
 	void decrement();
 	void signAForm(AForm& to_sign);

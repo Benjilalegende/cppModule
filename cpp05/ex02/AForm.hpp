@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:30:52 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 17:20:35 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 16:01:36 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class AForm
 {
 	public :
 	AForm(std::string Name, int grade_sign, int grade_exec);
+	AForm();
 	AForm(AForm& to_copy);
 	AForm& operator=(AForm& to_assign);
 	~AForm();

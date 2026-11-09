@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:36:42 by benji             #+#    #+#             */
-/*   Updated: 2026/11/02 15:57:03 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 15:59:35 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ Form::~Form()
 {
 
 }
+
+Form::Form() :  _Name("NONE"), _is_signed(false), _grade_sign(0), _grade_exec(0)
+{
+
+}
+
 
 Form::Form(Form& to_copy) : _Name(to_copy._Name), _is_signed(to_copy._is_signed), _grade_sign(to_copy._grade_sign), _grade_exec(to_copy._grade_exec)
 {

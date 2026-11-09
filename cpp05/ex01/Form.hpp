@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:30:52 by benji             #+#    #+#             */
-/*   Updated: 2026/11/02 15:58:31 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 15:57:25 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat;
 class Form
 {
 	public :
+	Form();
 	Form(std::string Name, int grade_sign, int grade_exec);
 	Form(Form& to_copy);
 	Form& operator=(Form& to_assign);

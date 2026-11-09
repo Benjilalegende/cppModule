@@ -6,7 +6,7 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:36:42 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 17:20:14 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/05 20:06:41 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ AForm::AForm(std::string Name, int grade_sign, int grade_exec) : _Name(Name), _i
 }
 
 AForm::~AForm()
+{
+
+}
+
+AForm::AForm() : _Name("NONE"), _is_signed(false), _grade_sign(0), _grade_exec(0)
 {
 
 }
@@ -91,8 +96,7 @@ void	AForm::execute(Bureaucrat const & executor) const
 		throw (AForm::GradeTooLowException());
 	else
 	{
-		std::cout << "exec" << std::endl;
-
+		std::cout << executor.GetName() << " exec " << this->_Name << std::endl;
 		this->execute_form();
 	}
 }

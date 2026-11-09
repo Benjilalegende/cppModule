@@ -6,12 +6,14 @@
 /*   By: benji <benji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:03:29 by benji             #+#    #+#             */
-/*   Updated: 2026/11/03 17:54:24 by benji            ###   ########.fr       */
+/*   Updated: 2026/11/04 18:23:41 by benji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm()
+{}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
 {
