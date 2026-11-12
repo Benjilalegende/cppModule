@@ -6,7 +6,7 @@
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:33:52 by bribot            #+#    #+#             */
-/*   Updated: 2026/11/09 19:53:42 by bribot           ###   ########.fr       */
+/*   Updated: 2026/11/11 18:08:11 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ typedef enum e_type
 	CHAR = 0,
 	INT,
 	FLOAT,
-	DOUBLE
+	DOUBLE,
+	INVALID
 } t_type;
 
 class ScalarConverter
@@ -40,9 +41,14 @@ class ScalarConverter
 	~ScalarConverter();
 };
 
-double convert_to_double(std::string to_convert);
-void	printer(double to_print);
-int is_spe(std::string to_verify);
+t_type recognize_type(const std::string &to_verify);
+
+//PRINTERS
+void print_invalid(std::string to_put);
+void	printer_double(std::string to_print);
+void	printer_int(std::string to_put);
+void	printer_char(std::string to_put);
+void	printer_float(std::string to_put);
 
 
 

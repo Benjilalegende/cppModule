@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bribot <bribot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/09 16:46:43 by bribot            #+#    #+#             */
-/*   Updated: 2026/11/09 20:03:10 by bribot           ###   ########.fr       */
+/*   Created: 2026/07/02 15:41:37 by benji             #+#    #+#             */
+/*   Updated: 2026/08/09 14:45:26 by bribot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int main(void)
-{
-	ScalarConverter::convert("2147483646");
-	ScalarConverter::convert("43.12");
-	ScalarConverter::convert("test");
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <unistd.h>
+#include "PhoneBook.hpp"
 
+// CONSTRUCTORS
 
-}
+void	get_info(std::string to_ask, std::string *to_put);
+int	info_are_good(std::string content_keeper[5]);
+void	search_contact(PhoneBook *phone);
+
+#endif
